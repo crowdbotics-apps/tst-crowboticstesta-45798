@@ -8,6 +8,24 @@ function api_docs_schema_retrieve(payload) {
     params: { lang: payload.lang }
   })
 }
+function api_v1_dwfe_list(payload) {
+  return tstcrowboticstestaAPI.get(`/api/v1/dwfe/`)
+}
+function api_v1_dwfe_create(payload) {
+  return tstcrowboticstestaAPI.post(`/api/v1/dwfe/`, payload)
+}
+function api_v1_dwfe_retrieve(payload) {
+  return tstcrowboticstestaAPI.get(`/api/v1/dwfe/${payload.id}/`)
+}
+function api_v1_dwfe_update(payload) {
+  return tstcrowboticstestaAPI.put(`/api/v1/dwfe/${payload.id}/`, payload)
+}
+function api_v1_dwfe_partial_update(payload) {
+  return tstcrowboticstestaAPI.patch(`/api/v1/dwfe/${payload.id}/`, payload)
+}
+function api_v1_dwfe_destroy(payload) {
+  return tstcrowboticstestaAPI.delete(`/api/v1/dwfe/${payload.id}/`)
+}
 function api_v1_login_create(payload) {
   return tstcrowboticstestaAPI.post(`/api/v1/login/`, payload)
 }
@@ -58,6 +76,12 @@ function rest_auth_user_partial_update(payload) {
 }
 export const apiService = {
   api_docs_schema_retrieve,
+  api_v1_dwfe_list,
+  api_v1_dwfe_create,
+  api_v1_dwfe_retrieve,
+  api_v1_dwfe_update,
+  api_v1_dwfe_partial_update,
+  api_v1_dwfe_destroy,
   api_v1_login_create,
   api_v1_signup_create,
   rest_auth_login_create,
